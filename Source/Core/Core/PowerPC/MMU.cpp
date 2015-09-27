@@ -637,6 +637,7 @@ std::string HostGetString(u32 address, size_t size)
 		u8 res = HostRead_U8(address);
 		if (!res)
 			break;
+		s.append(1, (char)res);
 		++address;
 	} while (size == 0 || s.length() < size);
 	return s;
